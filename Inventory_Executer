@@ -1,0 +1,13 @@
+#!/bin/bash
+sw_vers
+computerName=$(scutil --get ComputerName) >> example.html
+Echo "      Computer Name:" $computerName
+system_profiler SPHardwareDataType | grep "Model Identifier"
+system_profiler SPHardwareDataType | grep "Serial Number"
+system_profiler SPHardwareDataType | grep "Model Name"
+system_profiler SPHardwareDataType | grep "Processor Name"
+system_profiler SPHardwareDataType | grep "Processor Speed"
+system_profiler SPHardwareDataType | grep "Total Number Of Cores"
+system_profiler SPHardwareDataType | grep Memory
+system_profiler SPStorageDataType | grep Capacity | head -n 1
+system_profiler SPNetworkDataType | grep MAC
